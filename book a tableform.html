@@ -1,0 +1,140 @@
+<!doctype html>
+<html>
+<head>
+<title>Book a table</title>
+<style>
+body{padding:0;margin:0;
+background-color:pink;}
+header{
+background-color:#35edb6;
+color:blue;	
+padding:10px,0;
+}
+h1{
+text-align:center;
+}
+ul,li{
+display:inline;
+li{
+padding:10px;
+align:center;}
+
+.btn{
+text-align:center;
+background-color:blue;
+border-radius:10px;
+color:white;
+}
+.form{
+  background-color:green;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+        
+
+
+   fieldset {
+            border: 1px solid green;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+
+        legend {
+            font-weight:bold;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="submit"]: {
+            background-color: yellow; }
+input type: hover{background-color:orange;
+</style>
+</head>
+<body>
+<header>
+<h1>Bhojan Mahal</h1>
+<nav>
+<ul>
+<a href="hero hotel.html">Home<li></a>
+<a href="book a table.html">Gellary<li></a>
+<li>Contect us 
+<li>Free Delivery
+</nav>
+</header>
+  <h1>Job Application Form</h1>
+    <form action="submit">
+<fieldset>
+            <legend>Personal Information</legend>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+   
+                    <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="phone">Phone:</label>
+            <input type="tel" id="phone" name="phone" required>
+</form ID="form">
+
+
+        <!-- Education -->
+        <fieldset>
+            <legend>Education</legend>
+            <label for="degree">Highest Degree:</label>
+            <input type="text" id="degree" name="degree" required>
+
+
+
+  <label for="university">University/College:</label>
+            <input type="text" id="university" name="university" required>
+        </fieldset>
+
+
+
+
+
+
+ <fieldset>
+            <legend>Job Preferences</legend>
+            <label>Preferred Location:</label><br>
+            <input type="checkbox" id="location1" name="location[]" value="New York"> New York
+            <input type="checkbox" id="location2" name="location[]" value="Los Angeles"> Los Angeles
+            <input type="checkbox" id="location3" name="location[]" value="Chicago"> Chicago
+
+
+
+
+
+ <select id="position" name="position">
+                <option value="developer">Developer</option>
+                <option value="designer">Designer</option>
+                <option value="manager">Manager</option>
+            </select>  <label for="position">Desired Position:</label>
+       
+        </fieldset>
+
+
+
+
+
+ <!-- Resume Upload -->
+        <fieldset>
+            <legend>Resume Upload</legend>
+            <label for="resume">Upload your resume:</label>
+            <input type="file" id="resume" name="resume" accept=".pdf, .doc, .docx">
+        </fieldset>
+
+        <!-- Submit Button -->
+        <input type="submit" value="Submit" class="btn">
+    </form>
+</body>
+</html>
+
+
+
