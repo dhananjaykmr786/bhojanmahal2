@@ -1,0 +1,2074 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Official Realme Store - Flagship smartphones, TWS earbuds & AIoT devices">
+    <title>Realme Store | Premium Tech at Leapfrog Prices</title>
+    
+    <!-- Preload Critical Assets -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Chakra+Petch:wght@700&display=swap" as="style">
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css" as="style">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Chakra+Petch:wght@700&display=swap" rel="stylesheet">
+    
+    <!-- CSS Libraries -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
+    
+    <style>
+        :root {
+            /* 3D Color System */
+            --primary-3d: hsl(12, 100%, 59%);
+            --primary-3d-dark: hsl(12, 85%, 52%);
+            --primary-3d-light: hsl(12, 100%, 72%);
+            --secondary-3d: hsl(240, 8%, 12%);
+            --accent-3d: hsl(198, 100%, 47%);
+            --surface-3d: hsl(0, 0%, 100%);
+            --text-3d: hsl(240, 8%, 25%);
+            --text-muted: hsl(240, 5%, 45%);
+            
+            /* 3D Shadows */
+            --shadow-primary: 0 8px 32px hsla(12, 100%, 59%, 0.25);
+            --shadow-card: 0 12px 24px -8px hsla(240, 8%, 12%, 0.1);
+            --shadow-card-hover: 0 24px 48px -12px hsla(240, 8%, 12%, 0.2);
+            
+            /* 3D Transitions */
+            --transition-3d: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            --transition-morph: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+            
+            /* 3D Border Radius */
+            --radius-3d: 16px;
+            --radius-pill: 999px;
+            
+            /* 3D Spacing */
+            --space-3d: 24px;
+        }
+
+        /* CSS Reset with Modern Normalize */
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 100px;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+            line-height: 1.6;
+            color: var(--text-3d);
+            background-color: var(--surface-3d);
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* 3D Typography */
+        h1, h2, h3, h4 {
+            font-family: 'Chakra Petch', sans-serif;
+            font-weight: 700;
+            line-height: 1.2;
+            letter-spacing: -0.03em;
+        }
+
+        /* 3D Animations */
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(2deg); }
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        @keyframes glitch {
+            0% { transform: translate(0); }
+            20% { transform: translate(-2px, 2px); }
+            40% { transform: translate(-2px, -2px); }
+            60% { transform: translate(2px, 2px); }
+            80% { transform: translate(2px, -2px); }
+            100% { transform: translate(0); }
+        }
+
+        /* 3D Glass Morphism */
+        .glass {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+        }
+
+        /* 3D Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 16px 0;
+            transition: var(--transition-3d);
+        }
+
+        header.scrolled {
+            background: rgba(255, 255, 255, 0.96);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            padding: 12px 0;
+        }
+
+        .header-container {
+            max-width: 1440px;
+            margin: 0 auto;
+            padding: 0 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 28px;
+            font-weight: 800;
+            color: var(--secondary-3d);
+        }
+
+        .logo span {
+            color: var(--primary-3d);
+        }
+
+        .logo-img {
+            height: 36px;
+            transition: var(--transition-3d);
+        }
+
+        .logo:hover .logo-img {
+            transform: rotate(15deg);
+        }
+
+        /* 3D Navigation */
+        .nav-desktop {
+            display: flex;
+            gap: 8px;
+        }
+
+        .nav-link {
+            position: relative;
+            padding: 12px 20px;
+            font-weight: 600;
+            color: var(--secondary-3d);
+            text-decoration: none;
+            border-radius: var(--radius-pill);
+            transition: var(--transition-3d);
+        }
+
+        .nav-link::before {
+            content: '';
+            position: absolute;
+            bottom: 6px;
+            left: 20px;
+            width: calc(100% - 40px);
+            height: 2px;
+            background: var(--primary-3d);
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform 0.4s cubic-bezier(0.65, 0, 0.35, 1);
+        }
+
+        .nav-link:hover::before {
+            transform: scaleX(1);
+            transform-origin: left;
+        }
+
+        .nav-link.active {
+            background: hsla(12, 100%, 59%, 0.1);
+            color: var(--primary-3d);
+        }
+
+        /* 3D Hero Section */
+        .hero {
+            position: relative;
+            height: 100vh;
+            min-height: 800px;
+            display: flex;
+            align-items: center;
+            padding: 120px 40px 80px;
+            overflow: hidden;
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--secondary-3d) 0%, #0f0f13 100%);
+            z-index: -2;
+        }
+
+        .hero-bg-pattern {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: radial-gradient(circle at 25% 50%, hsla(12, 100%, 59%, 0.1) 1px, transparent 1px);
+            background-size: 40px 40px;
+            z-index: -1;
+            opacity: 0.4;
+        }
+
+        .hero-content {
+            max-width: 600px;
+            animation: fadeIn 1s 0.2s both;
+        }
+
+        .hero-title {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            margin-bottom: 24px;
+            background: linear-gradient(90deg, var(--primary-3d), var(--accent-3d));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            line-height: 1.1;
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 40px;
+            max-width: 500px;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 16px;
+        }
+
+        /* 3D Product Float */
+        .hero-product {
+            position: absolute;
+            right: 10%;
+            bottom: 10%;
+            width: 40%;
+            max-width: 600px;
+            animation: float 6s ease-in-out infinite;
+            filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.3));
+        }
+
+        /* 3D Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 16px 32px;
+            font-weight: 600;
+            border-radius: var(--radius-pill);
+            text-decoration: none;
+            transition: var(--transition-3d);
+            border: none;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-primary {
+            background: var(--primary-3d);
+            color: white;
+            box-shadow: 0 4px 16px hsla(12, 100%, 59%, 0.3);
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-3d-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px hsla(12, 100%, 59%, 0.4);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.3);
+        }
+
+        /* 3D Product Grid */
+        .products-section {
+            padding: 120px 40px;
+            background: linear-gradient(to bottom, #f9f9fa 0%, #ffffff 100%);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 64px;
+        }
+
+        .section-title {
+            font-size: clamp(2rem, 4vw, 3rem);
+            margin-bottom: 16px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-3d), var(--accent-3d));
+            border-radius: 2px;
+        }
+
+        .section-subtitle {
+            color: var(--text-muted);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 32px;
+            max-width: 1440px;
+            margin: 0 auto;
+        }
+
+        /* 3D Product Card */
+        .product-card {
+            background: var(--surface-3d);
+            border-radius: var(--radius-3d);
+            overflow: hidden;
+            box-shadow: var(--shadow-card);
+            transition: var(--transition-3d);
+            position: relative;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-card-hover);
+        }
+
+        .product-badge {
+            position: absolute;
+            top: 16px;
+            left: 16px;
+            background: var(--primary-3d);
+            color: white;
+            padding: 6px 12px;
+            border-radius: var(--radius-pill);
+            font-size: 12px;
+            font-weight: 700;
+            z-index: 2;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .product-badge.new {
+            background: var(--accent-3d);
+        }
+
+        .product-media {
+            position: relative;
+            height: 280px;
+            background: linear-gradient(135deg, #f5f5f5 0%, #e0e0e0 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .product-image {
+            max-width: 80%;
+            max-height: 80%;
+            object-fit: contain;
+            transition: var(--transition-3d);
+            transform-style: preserve-3d;
+        }
+
+        .product-card:hover .product-image {
+            transform: scale(1.1) rotateY(10deg);
+        }
+
+        .product-content {
+            padding: 24px;
+        }
+
+        .product-title {
+            font-size: 1.25rem;
+            margin-bottom: 12px;
+            color: var(--secondary-3d);
+        }
+
+        .product-desc {
+            color: var(--text-muted);
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .product-price {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+
+        .current-price {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-3d);
+        }
+
+        .original-price {
+            font-size: 1rem;
+            color: var(--text-muted);
+            text-decoration: line-through;
+        }
+
+        .discount-badge {
+            background: #ffebee;
+            color: #f44336;
+            padding: 4px 10px;
+            border-radius: var(--radius-pill);
+            font-size: 0.85rem;
+            font-weight: 700;
+        }
+
+        .product-actions {
+            display: flex;
+            gap: 12px;
+        }
+
+        .btn-sm {
+            padding: 12px 20px;
+            font-size: 0.9rem;
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--primary-3d);
+            color: var(--primary-3d);
+        }
+
+        .btn-outline:hover {
+            background: var(--primary-3d);
+            color: white;
+        }
+
+        /* 3D Features Section */
+        .features-section {
+            padding: 120px 40px;
+            background: var(--secondary-3d);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .features-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .feature-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border-radius: var(--radius-3d);
+            padding: 40px 32px;
+            transition: var(--transition-3d);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-8px);
+            background: rgba(255, 255, 255, 0.1);
+            box-shadow: 0 16px 32px rgba(0, 0, 0, 0.2);
+        }
+
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary-3d), var(--accent-3d));
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 24px;
+            font-size: 24px;
+            color: white;
+        }
+
+        .feature-title {
+            font-size: 1.5rem;
+            margin-bottom: 16px;
+        }
+
+        .feature-desc {
+            opacity: 0.8;
+            line-height: 1.7;
+        }
+
+        /* 3D Newsletter */
+        .newsletter-section {
+            padding: 120px 40px;
+            background: linear-gradient(135deg, var(--primary-3d), var(--accent-3d));
+            color: white;
+            text-align: center;
+        }
+
+        .newsletter-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .newsletter-title {
+            font-size: clamp(1.75rem, 3vw, 2.5rem);
+            margin-bottom: 16px;
+        }
+
+        .newsletter-desc {
+            opacity: 0.9;
+            margin-bottom: 40px;
+            font-size: 1.1rem;
+        }
+
+        .newsletter-form {
+            display: flex;
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            border-radius: var(--radius-pill);
+            overflow: hidden;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+        }
+
+        .newsletter-input {
+            flex: 1;
+            padding: 18px 24px;
+            border: none;
+            font-size: 1rem;
+            outline: none;
+        }
+
+        .newsletter-btn {
+            padding: 18px 32px;
+            background: var(--secondary-3d);
+            color: white;
+            border: none;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition-3d);
+        }
+
+        .newsletter-btn:hover {
+            background: black;
+        }
+
+        /* 3D Footer */
+        footer {
+            background: var(--secondary-3d);
+            color: white;
+            padding: 80px 40px 40px;
+            position: relative;
+        }
+
+        .footer-wave {
+            position: absolute;
+            top: -100px;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z' opacity='.25' fill='%23ffffff'%3E%3C/path%3E%3Cpath d='M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z' opacity='.5' fill='%23ffffff'%3E%3C/path%3E%3Cpath d='M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z' fill='%23ffffff'%3E%3C/path%3E%3C/svg%3E");
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 48px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-logo {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 24px;
+            display: inline-block;
+        }
+
+        .footer-about {
+            opacity: 0.8;
+            margin-bottom: 24px;
+            line-height: 1.7;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 16px;
+        }
+
+        .social-link {
+            width: 42px;
+            height: 42px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition-3d);
+            color: white;
+            font-size: 18px;
+        }
+
+        .social-link:hover {
+            background: var(--primary-3d);
+            transform: translateY(-4px);
+        }
+
+        .footer-heading {
+            font-size: 1.25rem;
+            margin-bottom: 24px;
+            position: relative;
+            padding-bottom: 12px;
+        }
+
+        .footer-heading::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background: var(--primary-3d);
+            border-radius: 2px;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: var(--transition-3d);
+            display: inline-block;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary-3d);
+            transform: translateX(4px);
+        }
+
+        .footer-contact p {
+            margin-bottom: 16px;
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            opacity: 0.8;
+        }
+
+        .footer-contact i {
+            color: var(--primary-3d);
+                        .products-section, .features-section, .newsletter-section, footer {
+                padding: 60px 16px;
+            }
+            
+            .modal-content {
+                padding: 24px;
+            }
+            
+            .modal-actions {
+                flex-direction: column;
+            }
+            
+            .btn {
+                width: 100%;
+            }
+            
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+        }
+
+        /* 3D Dark Mode Toggle */
+        .theme-toggle {
+            position: relative;
+            width: 48px;
+            height: 24px;
+            background: rgba(0, 0, 0, 0.1);
+            border-radius: var(--radius-pill);
+            cursor: pointer;
+            transition: var(--transition-3d);
+            margin-left: 16px;
+        }
+
+        .theme-toggle::before {
+            content: '';
+            position: absolute;
+            top: 2px;
+            left: 2px;
+            width: 20px;
+            height: 20px;
+            background: white;
+            border-radius: 50%;
+            transition: var(--transition-3d);
+        }
+
+        [data-theme="dark"] .theme-toggle {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        [data-theme="dark"] .theme-toggle::before {
+            transform: translateX(24px);
+            background: var(--primary-3d);
+        }
+
+        /* 3D Loading Animation */
+        .loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--secondary-3d);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 0.6s ease;
+        }
+
+        .loader.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .loader-content {
+            text-align: center;
+        }
+
+        .loader-logo {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 24px;
+            animation: pulse 1.5s infinite;
+        }
+
+        .loader-bar {
+            width: 200px;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 2px;
+            overflow: hidden;
+            margin: 0 auto;
+        }
+
+        .loader-progress {
+            height: 100%;
+            width: 0;
+            background: linear-gradient(90deg, var(--primary-3d), var(--accent-3d));
+            transition: width 0.4s ease;
+        }
+
+        /* 3D Product Hover Effects */
+        .product-card:hover .product-badge {
+            animation: glitch 0.4s linear;
+        }
+
+        .product-card .product-media::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(255, 90, 48, 0.1) 0%, rgba(0, 174, 239, 0.1) 100%);
+            opacity: 0;
+            transition: var(--transition-3d);
+        }
+
+        .product-card:hover .product-media::after {
+            opacity: 1;
+        }
+
+        /* 3D Cart Indicator */
+        .cart-indicator {
+            position: relative;
+        }
+
+        .cart-count {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            width: 20px;
+            height: 20px;
+            background: var(--primary-3d);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 11px;
+            font-weight: 700;
+        }
+
+        /* 3D Search Bar */
+        .search-bar {
+            position: absolute;
+            top: 100%;
+            right: 40px;
+            width: 400px;
+            background: white;
+            border-radius: var(--radius-3d);
+            box-shadow: 0 16px 32px rgba(0, 0, 0, 0.1);
+            padding: 16px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(20px);
+            transition: var(--transition-3d);
+            z-index: 100;
+        }
+
+        .search-bar.active {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            border-radius: var(--radius-3d);
+            font-size: 1rem;
+            outline: none;
+            transition: var(--transition-3d);
+        }
+
+        .search-input:focus {
+            border-color: var(--primary-3d);
+            box-shadow: 0 0 0 2px rgba(255, 90, 48, 0.2);
+        }
+
+        /* 3D Toast Notification */
+        .toast {
+            position: fixed;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--secondary-3d);
+            color: white;
+            padding: 16px 24px;
+            border-radius: var(--radius-3d);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition-3d);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .toast.active {
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(-50%) translateY(0);
+        }
+
+        .toast-icon {
+            font-size: 20px;
+            color: var(--primary-3d);
+        }
+
+        /* 3D Product Labels */
+        .product-label {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            padding: 6px 12px;
+            border-radius: var(--radius-pill);
+            font-size: 12px;
+            font-weight: 700;
+            z-index: 2;
+        }
+
+        .label-new {
+            background: var(--accent-3d);
+            color: white;
+        }
+
+        .label-sale {
+            background: #ffebee;
+            color: #f44336;
+        }
+
+        .label-featured {
+            background: #fff8e1;
+            color: #ff8f00;
+        }
+
+        /* 3D Color Swatches */
+        .color-swatches {
+            display: flex;
+            gap: 8px;
+            margin: 16px 0;
+        }
+
+        .color-swatch {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            cursor: pointer;
+            border: 2px solid transparent;
+            transition: var(--transition-3d);
+        }
+
+        .color-swatch.active {
+            border-color: var(--primary-3d);
+            transform: scale(1.1);
+        }
+
+        /* 3D Quantity Selector */
+        .quantity-selector {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin: 16px 0;
+        }
+
+        .quantity-btn {
+            width: 36px;
+            height: 36px;
+            background: #f5f5f5;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: var(--transition-3d);
+            border: none;
+        }
+
+        .quantity-btn:hover {
+            background: #e0e0e0;
+        }
+
+        .quantity-input {
+            width: 50px;
+            text-align: center;
+            font-size: 1rem;
+            border: none;
+            outline: none;
+        }
+
+        /* 3D Product Tabs */
+        .product-tabs {
+            margin: 40px 0;
+        }
+
+        .tab-buttons {
+            display: flex;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            margin-bottom: 24px;
+        }
+
+        .tab-btn {
+            padding: 12px 24px;
+            font-weight: 600;
+            color: var(--text-muted);
+            cursor: pointer;
+            position: relative;
+            border: none;
+            background: none;
+        }
+
+        .tab-btn::after {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary-3d);
+            transition: var(--transition-3d);
+        }
+
+        .tab-btn.active {
+            color: var(--primary-3d);
+        }
+
+        .tab-btn.active::after {
+            width: 100%;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        /* 3D Review Stars */
+        .review-stars {
+            display: flex;
+            gap: 4px;
+            margin: 8px 0;
+        }
+
+        .star {
+            color: #ffc107;
+            font-size: 16px;
+        }
+
+        /* 3D Tooltip */
+        .tooltip {
+            position: relative;
+            display: inline-block;
+        }
+
+        .tooltip-text {
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--secondary-3d);
+            color: white;
+            padding: 6px 12px;
+            border-radius: 4px;
+            font-size: 12px;
+            white-space: nowrap;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition-3d);
+            margin-bottom: 8px;
+        }
+
+        .tooltip-text::after {
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            border-width: 6px;
+            border-style: solid;
+            border-color: var(--secondary-3d) transparent transparent transparent;
+        }
+
+        .tooltip:hover .tooltip-text {
+            opacity: 1;
+            visibility: visible;
+        }
+    </style>
+</head>
+<body>
+    <!-- 3D Loading Screen -->
+    <div class="loader">
+        <div class="loader-content">
+            <img src="https://via.placeholder.com/80x80.png/ff5a30/ffffff?text=R" alt="Realme Logo" class="loader-logo">
+            <div class="loader-bar">
+                <div class="loader-progress"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 3D Header -->
+    <header>
+        <div class="header-container">
+            <a href="#" class="logo">
+                <img src="https://via.placeholder.com/36x36.png/ff5a30/ffffff?text=R" alt="Realme Logo" class="logo-img">
+                <span>Realme</span>Store
+            </a>
+            
+            <nav class="nav-desktop">
+                <a href="#" class="nav-link active">Home</a>
+                <a href="#products" class="nav-link">Products</a>
+                <a href="#features" class="nav-link">Features</a>
+                <a href="#reviews" class="nav-link">Reviews</a>
+                <a href="#support" class="nav-link">Support</a>
+            </nav>
+            
+            <div class="nav-actions">
+                <button class="nav-icon search-btn">
+                    <i class="fas fa-search"></i>
+                </button>
+                <button class="nav-icon">
+                    <i class="fas fa-user"></i>
+                </button>
+                <button class="nav-icon cart-indicator">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">3</span>
+                </button>
+                <button class="theme-toggle"></button>
+                <button class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+            
+            <!-- 3D Search Bar -->
+            <div class="search-bar">
+                <input type="text" class="search-input" placeholder="Search products...">
+            </div>
+        </div>
+    </header>
+
+    <!-- 3D Mobile Menu -->
+    <div class="mobile-menu">
+        <button class="mobile-menu-close">
+            <i class="fas fa-times"></i>
+        </button>
+        <ul class="mobile-nav">
+            <li><a href="#" class="active">Home</a></li>
+            <li><a href="#products">Products</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#reviews">Reviews</a></li>
+            <li><a href="#support">Support</a></li>
+        </ul>
+    </div>
+
+    <!-- 3D Hero Section -->
+    <section class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-bg-pattern"></div>
+        
+        <div class="hero-content">
+            <h1 class="hero-title">Dare to Leap</h1>
+            <p class="hero-subtitle">Experience flagship performance at leapfrog prices with Realme's latest smartphones and AIoT devices</p>
+            <div class="hero-cta">
+                <a href="#products" class="btn btn-primary">
+                    <i class="fas fa-shopping-bag"></i> Shop Now
+                </a>
+                <a href="#features" class="btn btn-secondary">Learn More</a>
+            </div>
+        </div>
+        
+        <img src="https://via.placeholder.com/600x600.png/ffffff/ff5a30?text=Realme+GT5" alt="Realme GT5" class="hero-product">
+    </section>
+
+    <!-- 3D Products Section -->
+    <section id="products" class="products-section">
+        <div class="section-header">
+            <h2 class="section-title">Flagship Products</h2>
+            <p class="section-subtitle">Discover our latest innovations with cutting-edge technology</p>
+        </div>
+        
+        <div class="product-grid">
+            <!-- Product 1 -->
+            <div class="product-card" data-product="1">
+                <div class="product-badge">New</div>
+                <div class="product-media">
+                    <img src="https://via.placeholder.com/300x300.png/ff5a30/ffffff?text=GT5" alt="Realme GT5" class="product-image">
+                </div>
+                <div class="product-content">
+                    <h3 class="product-title">Realme GT5 Pro</h3>
+                    <p class="product-desc">Snapdragon 8 Gen 3 | 144Hz AMOLED | 240W Fast Charge</p>
+                    
+                    <div class="product-price">
+                        <span class="current-price">$799</span>
+                        <span class="original-price">$899</span>
+                        <span class="discount-badge">11% OFF</span>
+                    </div>
+                    
+                    <div class="product-actions">
+                        <button class="btn btn-sm btn-outline quick-view-btn">Quick View</button>
+                        <button class="btn btn-sm btn-primary">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Product 2 -->
+            <div class="product-card" data-product="2">
+                <div class="product-badge new">Bestseller</div>
+                <div class="product-media">
+                    <img src="https://via.placeholder.com/300x300.png/ff5a30/ffffff?text=11+Pro+" alt="Realme 11 Pro+" class="product-image">
+                </div>
+                <div class="product-content">
+                    <h3 class="product-title">Realme 11 Pro+</h3>
+                    <p class="product-desc">200MP Camera | Dimensity 7050 | 100W Fast Charge</p>
+                    
+                    <div class="product-price">
+                        <span class="current-price">$499</span>
+                        <span class="original-price">$549</span>
+                        <span class="discount-badge">9% OFF</span>
+                    </div>
+                    
+                    <div class="product-actions">
+                        <button class="btn btn-sm btn-outline quick-view-btn">Quick View</button>
+                        <button class="btn btn-sm btn-primary">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Product 3 -->
+            <div class="product-card" data-product="3">
+                <div class="product-label label-sale">Sale</div>
+                <div class="product-media">
+                    <img src="https://via.placeholder.com/300x300.png/ff5a30/ffffff?text=Buds+Air+5" alt="Realme Buds Air 5 Pro" class="product-image">
+                </div>
+                <div class="product-content">
+                    <h3 class="product-title">Buds Air 5 Pro</h3>
+                    <p class="product-desc">50dB ANC | LDAC Hi-Res | 40hr Playtime</p>
+                    
+                    <div class="product-price">
+                        <span class="current-price">$149</span>
+                        <span class="original-price">$179</span>
+                        <span class="discount-badge">17% OFF</span>
+                    </div>
+                    
+                    <div class="product-actions">
+                        <button class="btn btn-sm btn-outline quick-view-btn">Quick View</button>
+                        <button class="btn btn-sm btn-primary">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Product 4 -->
+            <div class="product-card" data-product="4">
+                <div class="product-label label-featured">Featured</div>
+                <div class="product-media">
+                    <img src="https://via.placeholder.com/300x300.png/ff5a30/ffffff?text=Watch+3" alt="Realme Watch 3 Pro" class="product-image">
+                </div>
+                <div class="product-content">
+                    <h3 class="product-title">Watch 3 Pro</h3>
+                    <p class="product-desc">1.78" AMOLED | SpO2 | 14-day Battery</p>
+                    
+                    <div class="product-price">
+                        <span class="current-price">$129</span>
+                        <span class="original-price">$159</span>
+                        <span class="discount-badge">19% OFF</span>
+                    </div>
+                    
+                    <div class="product-actions">
+                        <button class="btn btn-sm btn-outline quick-view-btn">Quick View</button>
+                        <button class="btn btn-sm btn-primary">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3D Features Section -->
+    <section id="features" class="features-section">
+        <div class="section-header">
+            <h2 class="section-title">Why Choose Realme</h2>
+            <p class="section-subtitle">We combine flagship features with revolutionary pricing</p>
+        </div>
+        
+        <div class="features-container">
+            <!-- Feature 1 -->
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-bolt"></i>
+                </div>
+                <h3 class="feature-title">Lightning Fast</h3>
+                <p class="feature-desc">Our devices feature the latest processors and cooling systems for unparalleled performance.</p>
+            </div>
+            
+            <!-- Feature 2 -->
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-camera"></i>
+                </div>
+                <h3 class="feature-title">Pro-Grade Camera</h3>
+                <p class="feature-desc">Flagship camera systems co-engineered with industry leaders for stunning photography.</p>
+            </div>
+            
+            <!-- Feature 3 -->
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-battery-full"></i>
+                </div>
+                <h3 class="feature-title">All-Day Power</h3>
+                <p class="feature-desc">Massive batteries with industry-leading fast charging technology.</p>
+            </div>
+            
+            <!-- Feature 4 -->
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+                <h3 class="feature-title">Extended Warranty</h3>
+                <p class="feature-desc">2-year warranty with premium support for complete peace of mind.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3D Newsletter -->
+    <section class="newsletter-section">
+        <div class="newsletter-container">
+            <h2 class="newsletter-title">Join the Realme Community</h2>
+            <p class="newsletter-desc">Subscribe to get exclusive offers, early access to new products, and tech tips.</p>
+            
+            <form class="newsletter-form">
+                <input type="email" placeholder="Enter your email address" class="newsletter-input" required>
+                <button type="submit" class="newsletter-btn">Subscribe</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- 3D Footer -->
+    <footer id="support">
+        <div class="footer-wave"></div>
+        
+        <div class="footer-grid">
+            <div class="footer-col">
+                <div class="footer-logo">Realme<span>Store</span></div>
+                <p class="footer-about">
+                    Bringing you the latest technology at leapfrog prices since 2018. 
+                    Our mission is to make premium tech accessible to everyone.
+                </p>
+                
+                <div class="social-links">
+                    <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-col">
+                <h3 class="footer-heading">Shop</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Smartphones</a></li>
+                    <li><a href="#">Audio</a></li>
+                    <li><a href="#">Wearables</a></li>
+                    <li><a href="#">Accessories</a></li>
+                    <li><a href="#">Bundles</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-col">
+                <h3 class="footer-heading">Support</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">FAQs</a></li>
+                    <li><a href="#">Shipping</a></li>
+                    <li><a href="#">Returns</a></li>
+                    <li><a href="#">Warranty</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-col">
+                <h3 class="footer-heading">Company</h3>
+                <ul class="footer-links">
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Press</a></li>
+                    <li><a href="#">Investors</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-col">
+                <h3 class="footer-heading">Contact</h3>
+                <div class="footer-contact">
+                    <p><i class="fas fa-envelope"></i> support@realmestore.com</p>
+                    <p><i class="fas fa-phone-alt"></i> +1 (800) 123-4567</p>
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Tech Street, Silicon Valley</p>
+                    <p><i class="fas fa-clock"></i> Mon-Fri: 9AM-6PM PST</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            <p>&copy; 2024 Realme Store. All rights reserved. | Designed with ❤️ by Krishnandan Kumar</p>
+        </div>
+    </footer>
+
+    <!-- 3D Back to Top -->
+    <button class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- 3D Toast Notification -->
+    <div class="toast">
+        <i class="fas fa-check-circle toast-icon"></i>
+        <span class="toast-message">Product added to cart successfully!</span>
+    </div>
+
+    <!-- 3D Product Modal -->
+    <div class="modal-overlay">
+        <div class="modal">
+            <button class="modal-close">
+                <i class="fas fa-times"></i>
+            </button>
+            
+            <div class="modal-content">
+                <div class="modal-media">
+                    <img src="https://via.placeholder.com/500x500.png/ff5a30/ffffff?text=GT5+Pro" alt="Realme GT5 Pro" class="modal-image">
+                    
+                    <div class="color-swatches">
+                        <div class="color-swatch active" style="background: #000000;" title="Black"></div>
+                        <div class="color-swatch" style="background: #ffffff; border: 1px solid #eee;" title="White"></div>
+                        <div class="color-swatch" style="background: #ff5a30;" title="Orange"></div>
+                    </div>
+                </div>
+                
+                <div class="modal-details">
+                    <h2>Realme GT5 Pro</h2>
+                    
+                    <div class="modal-price">
+                        <span class="modal-original-price">$899</span>
+                        <span>$799</span>
+                        <span class="modal-discount">11% OFF</span>
+                    </div>
+                    
+                    <div class="review-stars">
+                        <i class="fas fa-star star"></i>
+                        <i class="fas fa-star star"></i>
+                        <i class="fas fa-star star"></i>
+                        <i class="fas fa-star star"></i>
+                        <i class="fas fa-star-half-alt star"></i>
+                        <span style="margin-left: 8px; color: var(--text-muted);">4.5 (128 reviews)</span>
+                    </div>
+                    
+                    <div class="modal-description">
+                        <p>The Realme GT5 Pro redefines flagship performance with the Snapdragon 8 Gen 3 chipset, a stunning 144Hz AMOLED display, and revolutionary 240W fast charging that takes your device from 0 to 100% in just 9 minutes.</p>
+                    </div>
+                    
+                    <div class="modal-features">
+                        <h3>Key Features</h3>
+                        <ul>
+                            <li>Qualcomm Snapdragon 8 Gen 3 Processor</li>
+                            <li>6.78" 144Hz AMOLED LTPO Display</li>
+                            <li>240W SuperDart Charging (0-100% in 9 mins)</li>
+                            <li>50MP Sony IMX890 OIS Main Camera</li>
+                            <li>16GB LPDDR5X RAM + 1TB UFS 4.0 Storage</li>
+                            <li>Dolby Atmos Dual Stereo Speakers</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="quantity-selector">
+                        <button class="quantity-btn minus"><i class="fas fa-minus"></i></button>
+                        <input type="number" class="quantity-input" value="1" min="1" max="10">
+                        <button class="quantity-btn plus"><i class="fas fa-plus"></i></button>
+                    </div>
+                    
+                    <div class="modal-actions">
+                        <button class="btn btn-outline">
+                            <i class="far fa-heart"></i> Wishlist
+                        </button>
+                        <button class="btn btn-primary">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </div>
+                    
+                    <div class="product-tabs">
+                        <div class="tab-buttons">
+                            <button class="tab-btn active" data-tab="specs">Specifications</button>
+                            <button class="tab-btn" data-tab="reviews">Reviews</button>
+                            <button class="tab-btn" data-tab="support">Support</button>
+                        </div>
+                        
+                        <div class="tab-content active" id="specs">
+                            <p>Detailed specifications will appear here...</p>
+                        </div>
+                        
+                        <div class="tab-content" id="reviews">
+                            <p>Customer reviews will appear here...</p>
+                        </div>
+                        
+                        <div class="tab-content" id="support">
+                            <p>Support information will appear here...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
+    
+    <!-- Main JavaScript -->
+    <script>
+        // 3D Loading Animation
+        window.addEventListener('load', () => {
+            const loader = document.querySelector('.loader');
+            const progress = document.querySelector('.loader-progress');
+            
+            // Simulate loading progress
+            let width = 0;
+            const interval = setInterval(() => {
+                width += 5;
+                progress.style.width = width + '%';
+                
+                if (width >= 100) {
+                    clearInterval(interval);
+                    loader.classList.add('hidden');
+                    
+                    // Show toast notification
+                    setTimeout(() => {
+                        showToast('Welcome to Realme Store!');
+                    }, 500);
+                }
+            }, 100);
+        });
+
+        // 3D Mobile Menu Toggle
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const mobileMenu = document.querySelector('.mobile-menu');
+        const mobileMenuClose = document.querySelector('.mobile-menu-close');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+        
+        mobileMenuClose.addEventListener('click', () => {
+            mobileMenu.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        });
+
+        // 3D Header Scroll Effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // 3D Back to Top Button
+        const backToTopBtn = document.querySelector('.back-to-top');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTopBtn.classList.add('active');
+            } else {
+                backToTopBtn.classList.remove('active');
+            }
+        });
+        
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // 3D Search Toggle
+        const searchBtn = document.querySelector('.search-btn');
+        const searchBar = document.querySelector('.search-bar');
+        
+        searchBtn.addEventListener('click', () => {
+            searchBar.classList.toggle('active');
+        });
+
+        // 3D Quick View Modal
+        const quickViewBtns = document.querySelectorAll('.quick-view-btn');
+        const modalOverlay = document.querySelector('.modal-overlay');
+        const modalClose = document.querySelector('.modal-close');
+        
+        quickViewBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                modalOverlay.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            });
+        });
+        
+        modalClose.addEventListener('click', () => {
+            modalOverlay.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        });
+        
+        // Close modal when clicking outside
+        modalOverlay.addEventListener('click', (e) => {
+            if (e.target === modalOverlay) {
+                modalOverlay.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        });
+
+        // 3D Color Swatches
+        const colorSwatches = document.querySelectorAll('.color-swatch');
+        
+        colorSwatches.forEach(swatch => {
+            swatch.addEventListener('click', () => {
+                colorSwatches.forEach(s => s.classList.remove('active'));
+                swatch.classList.add('active');
+                
+                // Change product image based on color
+                // In a real implementation, you would swap the image source
+            });
+        });
+
+        // 3D Quantity Selector
+        const minusBtn = document.querySelector('.minus');
+        const plusBtn = document.querySelector('.plus');
+        const quantityInput = document.querySelector('.quantity-input');
+        
+        minusBtn.addEventListener('click', () => {
+            let value = parseInt(quantityInput.value);
+            if (value > 1) {
+                quantityInput.value = value - 1;
+            }
+        });
+        
+        plusBtn.addEventListener('click', () => {
+            let value = parseInt(quantityInput.value);
+            if (value < 10) {
+                quantityInput.value = value + 1;
+            }
+        });
+
+        // 3D Product Tabs
+        const tabBtns = document.querySelectorAll('.tab-btn');
+        const tabContents = document.querySelectorAll('.tab-content');
+        
+        tabBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const tabId = btn.getAttribute('data-tab');
+                
+                // Remove active class from all buttons and contents
+                tabBtns.forEach(b => b.classList.remove('active'));
+                tabContents.forEach(c => c.classList.remove('active'));
+                
+                // Add active class to clicked button and corresponding content
+                btn.classList.add('active');
+                document.getElementById(tabId).classList.add('active');
+            });
+        });
+
+        // 3D Toast Notification
+        function showToast(message) {
+            const toast = document.querySelector('.toast');
+            const toastMessage = document.querySelector('.toast-message');
+            
+            toastMessage.textContent = message;
+            toast.classList.add('active');
+            
+            setTimeout(() => {
+                toast.classList.remove('active');
+            }, 3000);
+        }
+
+        // 3D Add to Cart Functionality
+        const addToCartBtns = document.querySelectorAll('.btn-primary:not(.modal-actions .btn-primary)');
+        
+        addToCartBtns.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                
+                // Update cart count
+                const cartCount = document.querySelector('.cart-count');
+                let count = parseInt(cartCount.textContent);
+                cartCount.textContent = count + 1;
+                
+                // Show toast notification
+                showToast('Product added to cart!');
+                
+                // Add animation to cart icon
+                const cartIcon = document.querySelector('.cart-indicator');
+                cartIcon.classList.add('pulse');
+                setTimeout(() => {
+                    cartIcon.classList.remove('pulse');
+                }, 500);
+            });
+        });
+
+        // 3D Theme Toggle
+        const themeToggle = document.querySelector('.theme-toggle');
+        const html = document.documentElement;
+        
+        themeToggle.addEventListener('click', () => {
+            if (html.getAttribute('data-theme') === 'dark') {
+                html.removeAttribute('data-theme');
+                localStorage.setItem('theme', 'light');
+            } else {
+                html.setAttribute('data-theme', 'dark');
+                localStorage.setItem('theme', 'dark');
+            }
+        });
+
+        // Check for saved theme preference
+        if (localStorage.getItem('theme') === 'dark') {
+            html.setAttribute('data-theme', 'dark');
+        }
+
+        // 3D Product Hover Effects
+        const productCards = document.querySelectorAll('.product-card');
+        
+        productCards.forEach(card => {
+            card.addEventListener('mousemove', (e)                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
+                
+                const angleX = (y - centerY) / 20;
+                const angleY = (centerX - x) / 20;
+                
+                card.style.transform = `perspective(1000px) rotateX(${angleX}deg) rotateY(${angleY}deg)`;
+            });
+            
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0)';
+            });
+        });
+
+        // 3D Splide Carousel Initialization
+        new Splide('.splide', {
+            type: 'loop',
+            perPage: 3,
+            gap: '32px',
+            breakpoints: {
+                1024: {
+                    perPage: 2,
+                },
+                768: {
+                    perPage: 1,
+                }
+            }
+        }).mount();
+
+        // 3D Product Filtering
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Remove active class from all buttons
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                
+                // Add active class to clicked button
+                button.classList.add('active');
+                
+                const filterValue = button.getAttribute('data-filter');
+                
+                // Filter products
+                productCards.forEach(card => {
+                    if (filterValue === 'all') {
+                        card.style.display = 'block';
+                    } else {
+                        const cardCategory = card.getAttribute('data-category');
+                        if (cardCategory === filterValue) {
+                            card.style.display = 'block';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    }
+                });
+            });
+        });
+
+        // 3D Smooth Scrolling for Anchor Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    mobileMenu.classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                }
+            });
+        });
+
+        // 3D Intersection Observer for Scroll Animations
+        const animateOnScroll = () => {
+            const elements = document.querySelectorAll('.animate-on-scroll');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animated');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+            
+            elements.forEach(element => {
+                observer.observe(element);
+            });
+        };
+
+        // Initialize animations when page loads
+        window.addEventListener('load', animateOnScroll);
+
+        // 3D Product Comparison Functionality
+        const compareCheckboxes = document.querySelectorAll('.compare-checkbox');
+        const compareBtn = document.querySelector('.compare-btn');
+        let compareCount = 0;
+        
+        compareCheckboxes.forEach(checkbox => {
+            checkbox.addEventListener('change', () => {
+                if (checkbox.checked) {
+                    compareCount++;
+                } else {
+                    compareCount--;
+                }
+                
+                if (compareCount >= 2) {
+                    compareBtn.classList.add('active');
+                } else {
+                    compareBtn.classList.remove('active');
+                }
+            });
+        });
+
+        // 3D Wishlist Functionality
+        const wishlistBtns = document.querySelectorAll('.wishlist-btn');
+        
+        wishlistBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                btn.classList.toggle('active');
+                
+                if (btn.classList.contains('active')) {
+                    showToast('Added to wishlist!');
+                } else {
+                    showToast('Removed from wishlist!');
+                }
+            });
+        });
+
+        // 3D Dynamic Product Rating
+        const starRatings = document.querySelectorAll('.star-rating');
+        
+        starRatings.forEach(rating => {
+            const stars = rating.querySelectorAll('.star');
+            const ratingValue = parseFloat(rating.getAttribute('data-rating'));
+            const fullStars = Math.floor(ratingValue);
+            const hasHalfStar = ratingValue % 1 >= 0.5;
+            
+            stars.forEach((star, index) => {
+                if (index < fullStars) {
+                    star.classList.add('fas');
+                    star.classList.remove('far');
+                } else if (index === fullStars && hasHalfStar) {
+                    star.classList.add('fas', 'fa-star-half-alt');
+                    star.classList.remove('far', 'fa-star');
+                } else {
+                    star.classList.add('far');
+                    star.classList.remove('fas');
+                }
+            });
+        });
+
+        // 3D Real-time Stock Indicator
+        const stockIndicators = document.querySelectorAll('.stock-indicator');
+        
+        stockIndicators.forEach(indicator => {
+            const stock = parseInt(indicator.getAttribute('data-stock'));
+            
+            if (stock > 10) {
+                indicator.textContent = 'In Stock';
+                indicator.style.color = '#4CAF50';
+            } else if (stock > 0) {
+                indicator.textContent = `Only ${stock} Left!`;
+                indicator.style.color = '#FF9800';
+            } else {
+                indicator.textContent = 'Out of Stock';
+                indicator.style.color = '#F44336';
+            }
+        });
+
+        // 3D Price Range Filter
+        const priceRange = document.getElementById('price-range');
+        const priceValue = document.getElementById('price-value');
+        
+        if (priceRange) {
+            priceRange.addEventListener('input', () => {
+                priceValue.textContent = `$${priceRange.value}`;
+                filterProductsByPrice(parseInt(priceRange.value));
+            });
+        }
+
+        function filterProductsByPrice(maxPrice) {
+            productCards.forEach(card => {
+                const price = parseInt(card.getAttribute('data-price'));
+                
+                if (price <= maxPrice) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        // 3D Product Quick View with Dynamic Content
+        document.querySelectorAll('.quick-view-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const productCard = this.closest('.product-card');
+                const productId = productCard.getAttribute('data-product');
+                
+                // In a real implementation, you would fetch product details from an API
+                // For demo purposes, we'll use the data from the clicked product card
+                const productTitle = productCard.querySelector('.product-title').textContent;
+                const productPrice = productCard.querySelector('.current-price').textContent;
+                const originalPrice = productCard.querySelector('.original-price')?.textContent || '';
+                const discount = productCard.querySelector('.discount-badge')?.textContent || '';
+                const productImage = productCard.querySelector('.product-image').src;
+                
+                // Update modal content
+                document.querySelector('.modal-details h2').textContent = productTitle;
+                document.querySelector('.modal-price span:nth-child(2)').textContent = productPrice;
+                document.querySelector('.modal-original-price').textContent = originalPrice;
+                document.querySelector('.modal-discount').textContent = discount;
+                document.querySelector('.modal-image').src = productImage;
+                
+                // Show modal
+                modalOverlay.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            });
+        });
+
+        // 3D Newsletter Form Submission
+        const newsletterForm = document.querySelector('.newsletter-form');
+        
+        if (newsletterForm) {
+            newsletterForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const email = this.querySelector('input[type="email"]').value;
+                
+                // In a real implementation, you would send this to your backend
+                console.log('Subscribed email:', email);
+                showToast('Thanks for subscribing!');
+                this.reset();
+            });
+        }
+
+        // 3D Product Image Zoom on Hover
+        const productImages = document.querySelectorAll('.product-image');
+        
+        productImages.forEach(image => {
+            image.addEventListener('mousemove', (e) => {
+                const rect = image.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                
+                const xPercent = x / rect.width * 100;
+                const yPercent = y / rect.height * 100;
+                
+                image.style.transformOrigin = `${xPercent}% ${yPercent}%`;
+                image.style.transform = 'scale(1.5)';
+            });
+            
+            image.addEventListener('mouseleave', () => {
+                image.style.transform = 'scale(1)';
+            });
+        });
+
+        // 3D Tooltip Initialization
+        const tooltips = document.querySelectorAll('.tooltip');
+        
+        tooltips.forEach(tooltip => {
+            tooltip.addEventListener('mouseenter', function() {
+                const tooltipText = this.querySelector('.tooltip-text');
+                tooltipText.style.opacity = '1';
+                tooltipText.style.visibility = 'visible';
+            });
+            
+            tooltip.addEventListener('mouseleave', function() {
+                const tooltipText = this.querySelector('.tooltip-text');
+                tooltipText.style.opacity = '0';
+                tooltipText.style.visibility = 'hidden';
+            });
+        });
+
+        // 3D Countdown Timer for Special Offers
+        function updateCountdown() {
+            const countdownElement = document.querySelector('.countdown');
+            if (!countdownElement) return;
+            
+            const now = new Date();
+            const tomorrow = new Date();
+            tomorrow.setDate(tomorrow.getDate() + 1);
+            tomorrow.setHours(0, 0, 0, 0);
+            
+            const diff = tomorrow - now;
+            
+            const hours = Math.floor(diff / (1000 * 60 * 60));
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+            
+            countdownElement.textContent = `${hours}h ${minutes}m ${seconds}s`;
+        }
+        
+        // Update countdown every second
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+
+        // 3D Dynamic Product Badges
+        const productBadges = document.querySelectorAll('.product-badge');
+        
+        productBadges.forEach(badge => {
+            // Add random animation delay for staggered effects
+            const delay = Math.random() * 0.5;
+            badge.style.animationDelay = `${delay}s`;
+        });
+
+        // 3D Lazy Loading for Images
+        if ('IntersectionObserver' in window) {
+            const lazyImages = document.querySelectorAll('.lazy-load');
+            
+            const imageObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        img.src = img.dataset.src;
+                        img.classList.remove('lazy-load');
+                        imageObserver.unobserve(img);
+                    }
+                });
+            });
+            
+            lazyImages.forEach(img => {
+                imageObserver.observe(img);
+            });
+        }
+
+        // 3D Cookie Consent Banner
+        const cookieBanner = document.querySelector('.cookie-banner');
+        const cookieAccept = document.querySelector('.cookie-accept');
+        
+        if (cookieBanner && !localStorage.getItem('cookiesAccepted')) {
+            cookieBanner.style.display = 'block';
+            
+            cookieAccept.addEventListener('click', () => {
+                localStorage.setItem('cookiesAccepted', 'true');
+                cookieBanner.style.opacity = '0';
+                
+                setTimeout(() => {
+                    cookieBanner.style.display = 'none';
+                }, 300);
+            });
+        }
+    </script>
+</body>
+</html>
